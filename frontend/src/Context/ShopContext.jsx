@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-
-export const ShopContext = createContext(null);
+import { backendUrl } from "../backendUrl";
 
 const getDefaultCart = () => {
   let cart = {};
@@ -10,7 +9,7 @@ const getDefaultCart = () => {
   return cart;
 };
 
-import { backendUrl } from "../backendUrl";
+export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
   const [all_product, setAll_product] = useState([]);
