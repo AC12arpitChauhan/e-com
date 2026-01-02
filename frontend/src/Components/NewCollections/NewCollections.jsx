@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./NewCollections.css";
 import Item from "../Item/Item";
+import { backendUrl } from "../../backendUrl";
 
 const NewCollections = () => {
 
   const [new_collection, setNew_collection] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/newcollections')
+    fetch(`${backendUrl}/newcollections`)
     .then((response) => response.json())
     .then((data) => setNew_collection(data))
   }, [])

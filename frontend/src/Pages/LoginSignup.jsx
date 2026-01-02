@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CSS/loginsignup.css";
+import { backendUrl } from "../backendUrl";
 
 const LoginSignup = () => {
   const [state, setState] = useState("Sign Up");
@@ -17,7 +18,7 @@ const LoginSignup = () => {
   const login = async () => {
     console.log("login function executed", formData);
     let responseData;
-    await fetch("http://localhost:4000/login", {
+    await fetch(`${backendUrl}/login`, {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -40,7 +41,7 @@ const LoginSignup = () => {
   const signup = async () => {
     console.log("Sign up function executed", formData);
     let responseData;
-    await fetch("http://localhost:4000/signup", {
+    await fetch(`${backendUrl}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/form-data",
