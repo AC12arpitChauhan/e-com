@@ -1,80 +1,97 @@
-.relatedproducts{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     gap: 10px;
-     height: 90vh;
+/* ===== RELATED PRODUCTS SECTION ===== */
+.relatedproducts {
+    padding: 80px clamp(20px, 5vw, 80px) 100px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 }
-.relatedproducts h1{
-    color: #171717;
-    font-size: 50px;
-    font-weight: 600;
+
+/* Section Header */
+.relatedproducts h1 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    letter-spacing: -0.02em;
+    text-align: center;
 }
-.relatedproducts hr{
-    width: 200px;
-    height: 6px;
-    border-radius: 10px;
-    background: #252525;
+
+.relatedproducts hr {
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 16px auto 0;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--gradient-accent);
 }
-.relatedproducts-item{
-    margin-top: 50px;
-    display: flex;
+
+.relatedproducts-subtitle {
+    font-size: 15px;
+    color: var(--color-gray-500);
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 48px;
+}
+
+/* Products Grid */
+.relatedproducts-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    justify-items: center;
 }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1280px) {
-    .relatedproducts{
-        height: 70vh;
+    .relatedproducts {
+        padding: 60px clamp(20px, 4vw, 60px) 80px;
     }
-    .relatedproducts h1{
-        font-size: 40px;
-    }
-    .relatedproducts hr{
-        width: 160px;
-        height: 4px;
-    }
-    .relatedproducts-item{
-        gap: 20px;
-        margin-top: 30px;
+
+    .relatedproducts-item {
+        gap: 24px;
     }
 }
+
 @media (max-width: 1024px) {
-    .relatedproducts{
-        height: 60vh;
+    .relatedproducts {
+        padding: 48px 24px 60px;
     }
-    .relatedproducts h1{
-        font-size: 30px;
+
+    .relatedproducts h1 {
+        font-size: 24px;
     }
-    .relatedproducts hr{
-        width: 120px;
+
+    .relatedproducts hr {
+        width: 50px;
         height: 3px;
     }
-    .relatedproducts-item{
-        gap: 15px;
-        margin-top: 20px;
+
+    .relatedproducts-item {
+        gap: 20px;
     }
 }
+
 @media (max-width: 800px) {
-    .relatedproducts{
-        height: 50vh;
-        gap: 6px;
+    .relatedproducts {
+        padding: 40px 16px 48px;
     }
-    .relatedproducts h1{
+
+    .relatedproducts h1 {
         font-size: 20px;
     }
-    .relatedproducts hr{
-        width: 120px;
-    }
-    .relatedproducts-item{
-        gap: 5px;
+
+    .relatedproducts-item {
+        gap: 16px;
     }
 }
+
 @media (max-width: 500px) {
-    .relatedproducts{
-        height: 90vh;
+    .relatedproducts {
+        padding: 32px 12px 40px;
     }
-    .relatedproducts-item{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+
+    .relatedproducts-item {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 }

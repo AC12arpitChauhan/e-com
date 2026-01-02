@@ -6,8 +6,11 @@ import Item from "../Item/Item";
 const RelatedProducts = () => {
   return (
     <div className="relatedproducts">
-      <h1>Related Products</h1>
+      <h1>You May Also Like</h1>
       <hr />
+      <p className="relatedproducts-subtitle">
+        Curated picks based on your style preferences
+      </p>
       <div className="relatedproducts-item">
         {data_product.map((item, i) => {
           return (

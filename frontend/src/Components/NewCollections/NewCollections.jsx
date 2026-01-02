@@ -14,8 +14,13 @@ const NewCollections = () => {
 
   return (
     <div className="new-collections">
-      <h1>NEW COLLECTIONS</h1>
-      <hr />
+      <div className="new-collections-header">
+        <h1>New Collections</h1>
+        <hr />
+        <p className="new-collections-subtitle">
+          Fresh arrivals curated just for you — explore the latest trends
+        </p>
+      </div>
       <div className="collections">
         {new_collection.map((item, i) => {
           return (

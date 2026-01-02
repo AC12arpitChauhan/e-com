@@ -1,33 +1,64 @@
-.breadcrum{
+/* ===== BREADCRUMB ===== */
+.breadcrum {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #5e5e5e;
-    font-size: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 24px clamp(20px, 5vw, 80px);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.breadcrum img {
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+}
+
+.breadcrum a,
+.breadcrum span {
+    transition: color var(--transition-fast);
+}
+
+.breadcrum a:hover {
+    color: var(--color-gray-700);
+}
+
+/* Last item (current page) */
+.breadcrum> :last-child {
+    color: var(--color-gray-700);
     font-weight: 600;
-    margin: 40px 170px;
-    text-transform: capitalize;
 }
-@media (max-width: 1280px) {
-    .breadcrum{
-        margin: 30px 50px;
-        font-size: 14px;
-    }
-}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .breadcrum{
-        margin: 30px 30px;
-        font-size: 13px;
-    }
-}
-@media (max-width: 800px) {
-    .breadcrum{
-        margin: 25px 10px;
+    .breadcrum {
+        padding: 20px 24px;
         font-size: 12px;
     }
 }
+
+@media (max-width: 800px) {
+    .breadcrum {
+        padding: 16px 16px;
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .breadcrum img {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 @media (max-width: 500px) {
-    .breadcrum{
+    .breadcrum {
+        padding: 12px 12px;
         font-size: 10px;
     }
 }

@@ -14,8 +14,13 @@ const Popular = () => {
 
   return (
     <div className="popular">
-      <h1>POPULAR IN WOMEN</h1>
-      <hr />
+      <div className="popular-header">
+        <h1>Popular in Women</h1>
+        <hr />
+        <p className="popular-subtitle">
+          Discover our most-loved styles, handpicked by our community
+        </p>
+      </div>
       <div className="popular-item">
         {popularProducts.map((item, i) => {
           return (

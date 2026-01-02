@@ -7,34 +7,36 @@ import whatsapp_icon from '../Assets/whatsapp_icon.png'
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <div className="footer-logo">
-        <img src={footer_logo} alt="" />
-        <p>SHOPPER</p>
-      </div>
-      <ul className="footer-links">
-        <li>Company</li>
-        <li>Products</li>
-        <li>Offices</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-      <div className="footer-social-icons">
-        <div className="footer-icons-container">
-            <img src={instagram_icon} alt="" /> 
+    <footer className='footer'>
+      <div className="footer-content">
+        <div className="footer-logo">
+          <img src={footer_logo} alt="Shopper Logo" />
+          <p>SHOPPER</p>
         </div>
-        <div className="footer-icons-container">
-            <img src={pintester_icon} alt="" /> 
+        <ul className="footer-links">
+          <li>Company</li>
+          <li>Products</li>
+          <li>Offices</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <div className="footer-social-icons">
+          <div className="footer-icons-container">
+              <img src={instagram_icon} alt="Instagram" /> 
+          </div>
+          <div className="footer-icons-container">
+              <img src={pintester_icon} alt="Pinterest" /> 
+          </div>
+          <div className="footer-icons-container">
+              <img src={whatsapp_icon} alt="WhatsApp" /> 
+          </div>
         </div>
-        <div className="footer-icons-container">
-            <img src={whatsapp_icon} alt="" /> 
+        <div className="footer-copyright">
+          <hr />
+          <p>Copyright © 2024 SHOPPER - All Rights Reserved.</p>
         </div>
       </div>
-      <div className="footer-copyright">
-        <hr />
-        <p>Copyright © 2024 - All Rights Reserved.</p>
-      </div>
-    </div>
+    </footer>
   )
 }
 
