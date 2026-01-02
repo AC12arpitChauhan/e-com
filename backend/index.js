@@ -10,7 +10,20 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["https://e-com-frontend-new.onrender.com", "http://localhost:3000"],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
+// Helper function to fix image URLs for production
+const fixImageUrl = (product, req) => {
+  if (product.image && product.image.includes("localhost")) {
+    const filename = product.image.split("/").pop();
+    product.image = `${req.protocol}://${req.get("host")}/images/${filename}`;
+  }
+  return product;
+};
 
 //database connection
 mongoose.connect(
@@ -120,8 +133,9 @@ app.post("/removeproduct", async (req, res) => {
 // creating api for getting alll products
 app.get("/allproducts", async (req, res) => {
   let products = await Product.find({});
+  let updatedProducts = products.map(product => fixImageUrl(product.toObject(), req));
   console.log("All Products Fetched");
-  res.send(products);
+  res.send(updatedProducts);
 });
 
 //Schema creating for User model
@@ -199,16 +213,18 @@ app.post("/login", async (req, res) => {
 app.get("/newcollections", async (req, res) => {
   let products = await Product.find({});
   let newcollection = products.slice(1).slice(-8);
+  let updatedCollection = newcollection.map(product => fixImageUrl(product.toObject(), req));
   console.log("NewCollections fetched");
-  res.send(newcollection);
+  res.send(updatedCollection);
 });
 
 // creating endpoint for popular
 app.get("/popularinwomen", async (req, res) => {
   let products = await Product.find({ category: "women" });
   let popular_in_women = products.slice(0, 4);
+  let updatedPopular = popular_in_women.map(product => fixImageUrl(product.toObject(), req));
   console.log("Popular in women fetched");
-  res.send(popular_in_women);
+  res.send(updatedPopular);
 });
 
 //creating middleware to fetch user
